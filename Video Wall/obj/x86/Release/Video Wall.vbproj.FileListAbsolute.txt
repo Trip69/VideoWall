@@ -1,0 +1,36 @@
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Release\Interop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Release\AxInterop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Release\Video Wall.vbproj.ResolveComReference.cache
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\bin\Release\Video Wall.exe
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\bin\Release\Video Wall.xml
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\bin\Release\Interop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\bin\Release\AxInterop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Release\Video_Wall.Form_Main.resources
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Release\Video_Wall.FormOptions.resources
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Release\Video_Wall.Resources.resources
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Release\Video Wall.exe
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Release\Video Wall.xml
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\bin\Release\Video Wall.exe.config
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Release\Video Wall.vbproj.GenerateResource.Cache
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Release\Video Wall.exe.config
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Interop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\AxInterop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video Wall.vbproj.ResolveComReference.cache
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video Wall.exe
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video Wall.xml
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Release\Video Wall.exe
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Release\Video Wall.xml
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Release\Interop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Release\AxInterop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video_Wall.Form_Main.resources
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video_Wall.FormOptions.resources
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video_Wall.Resources.resources
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video Wall.vbproj.GenerateResource.Cache
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Release\Video Wall.exe.manifest
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Release\Video Wall.application
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video Wall.exe.manifest
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video Wall.application
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video Wall.TrustInfo.xml
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video_Wall.MessageBox.resources
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video_Wall.RenameForm.resources
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Release\Video_Wall.Form_General_Options.resources

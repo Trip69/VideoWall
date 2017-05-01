@@ -1,0 +1,41 @@
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Debug\Interop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.vbproj.ResolveComReference.cache
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Debug\Video_Wall.Resources.resources
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Debug\AxInterop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\bin\Debug\Video Wall.exe
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\bin\Debug\Video Wall.pdb
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\bin\Debug\Video Wall.xml
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\bin\Debug\Interop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\bin\Debug\AxInterop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Debug\Video_Wall.Form_Main.resources
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.exe
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.xml
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.pdb
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Debug\Video_Wall.FormOptions.resources
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.vbproj.GenerateResource.Cache
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.vbprojResolveAssemblyReference.cache
+C:\Users\Chris\Documents\Visual Studio 2010\Projects\Video Wall\Video Wall\bin\Debug\Video Wall.exe.config
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Debug\Video Wall.exe.config
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Interop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\AxInterop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.vbproj.ResolveComReference.cache
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.exe
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.xml
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.pdb
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Debug\Video Wall.exe.manifest
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Debug\Video Wall.application
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Debug\Video Wall.exe
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Debug\Video Wall.pdb
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Debug\Video Wall.xml
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Debug\Interop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\bin\Debug\AxInterop.AXVLC.dll
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video_Wall.Form_Main.resources
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video_Wall.FormOptions.resources
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video_Wall.Resources.resources
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.vbproj.GenerateResource.Cache
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.TrustInfo.xml
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.exe.manifest
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video Wall.application
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video_Wall.MessageBox.resources
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video_Wall.RenameForm.resources
+C:\Users\Chris\Documents\Visual Studio 2012\Projects\Video Wall\Video Wall\obj\x86\Debug\Video_Wall.Form_General_Options.resources
