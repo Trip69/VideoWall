@@ -50,31 +50,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+EpEuqdwKVdMiMfrsOJzBLaj9meJtBZhdbXzhEEAIuU=</dsig:DigestValue>
+        <dsig:DigestValue>8m39CeAb4qRTRyubz+AZ74wF4MKLKTUnKU+0ydxVINA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.AXVLC.dll" size="40448">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.AXVLC.dll" size="37888">
       <assemblyIdentity name="Interop.AXVLC" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RC6sd2RX6dDvp0PhNbR4QdE64V3T8Q7FuIkrfHsk1Y8=</dsig:DigestValue>
+        <dsig:DigestValue>CQDrNWLy2dWvTdY2Q5MTUgLQLs5WBZm1j0Sm5yaUe6c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Video Wall.exe" size="349184">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Video Wall.exe" size="346032">
       <assemblyIdentity name="Video Wall" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XQzlT2YII3dGrY6VbW/uQf5ww/3ilshkvAL2wTy11t8=</dsig:DigestValue>
+        <dsig:DigestValue>S4uxLvngSyVMn+sIRmYh5EZsoRTaVmkZ6HHzIIqwNsw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
