@@ -403,7 +403,7 @@ Partial Class Form_Main
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(800, 599)
         Me.Name = "Form_Main"
-        Me.Text = "Video Wall"
+        Me.Text = "Video Wall v1.2"
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.AxVLCPlugin21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AxVLCPlugin22, System.ComponentModel.ISupportInitialize).EndInit()
@@ -415,7 +415,7 @@ Partial Class Form_Main
         Me.tp_controls.PerformLayout()
         Me.ResumeLayout(False)
 
-End Sub
+    End Sub
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents AxVLCPlugin21 As AxAXVLC.AxVLCPlugin2
     Friend WithEvents AxVLCPlugin23 As AxAXVLC.AxVLCPlugin2

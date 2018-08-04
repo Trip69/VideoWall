@@ -7,7 +7,13 @@
     Private Sub Form_General_Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cb_auto_aspect.Checked = Form_Main.AutoAspect
         cb_rating_filter.SelectedIndex = 2
-        Me.Location = Form_Main.b_quit.Location
+        Me.Location = New Point(Form_Main.Width / 2 + Form_Main.Location.X - (Me.Width / 2), Form_Main.Height / 2 + Form_Main.Location.Y - (Me.Height / 2))
+
+        cb_search.Items.Add("")
+        For Each cb In RenameForm.clb_cats.Items
+            If cb <> "" AndAlso cb <> "-" Then cb_search.Items.Add(cb)
+        Next
+        cb_search.SelectedIndex = 0
     End Sub
 
     Private Sub b_clearpl_Click(sender As Object, e As EventArgs) Handles b_clearpl.Click
@@ -55,6 +61,7 @@
                 Form_Main.options_list(a).lb_playlist.SelectedIndex = 0
             End If
         Next
+
     End Sub
 
     Private Sub AddFolder(fh As String, fo As FormOptions)
@@ -66,8 +73,9 @@
         Next
     End Sub
 
-    Private ratings() As String = {"vvgood", "vgood", "good", "ok", "poor"}
+    Private ratings() As String = {"vvgood", "vgood", "good", "ok", "poor", "Vvgood", "Vgood", "Good", "Ok", "Poor"}
     Private best_filter As List(Of String)
+    Private cat_filter As String = ""
 
     Private Sub AddFile(fh As String, fo As FormOptions)
         Dim name As String = fh.Substring(fh.LastIndexOf("\") + 1)
@@ -78,7 +86,13 @@
             valid_rating = ratings.Contains(rating)
         End If
 
-        If cb_rating_filter.SelectedIndex = 4 Then
+        If cb_search.SelectedItem <> "" AndAlso Not name.Split(" "c).Contains(cb_search.SelectedItem) Then
+            Exit Sub
+        End If
+
+        If cb_rating_filter.SelectedIndex = 6 Then
+            fo.AddFile(fh)
+        ElseIf Not valid_rating AndAlso cb_rating_filter.SelectedIndex = 5 Then
             fo.AddFile(fh)
         ElseIf valid_rating AndAlso best_filter.Contains(rating) Then
             fo.AddFile(fh)
@@ -87,7 +101,17 @@
     End Sub
 
     Private Sub b_double_mon_Click(sender As Object, e As EventArgs) Handles b_double_mon.Click
-        Form_Main.Location = New Point(-10, 0)
-        Form_Main.Size = New Size(2900, 1050)
+        Form_Main.Location = New Point(-10, -30)
+        Form_Main.Size = New Size(2900, 1080)
+
+        Me.Close()
+    End Sub
+
+    Private Sub b_jump_Click(sender As Object, e As EventArgs) Handles b_jump.Click
+        For Each Player In Form_Main.TableLayoutPanel1.Controls.OfType(Of AxAXVLC.AxVLCPlugin2)()
+            If Player.input.length > 0 Then
+                Player.input.time = Player.input.time + Player.input.length / 5
+            End If
+        Next
     End Sub
 End Class

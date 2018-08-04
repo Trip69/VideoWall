@@ -1,12 +1,12 @@
 ﻿Public Class RenameForm
 
     Friend PlayerNumber As Integer
-    Friend PlayerControl As AxVLCPlugin2
+    Friend PlayerControl As AxAXVLC.AxVLCPlugin2
     'Private VideoFile As System.IO.File
 
     Private Sub RenameForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Me.PlayerControl = Me.PlayerPanel.Controls.OfType(Of AxVLCPlugin2)().First
-        For Each Player In Form_Main.TableLayoutPanel1.Controls.OfType(Of AxVLCPlugin2)()
+        For Each Player In Form_Main.TableLayoutPanel1.Controls.OfType(Of AxAXVLC.AxVLCPlugin2)()
             If Player.Name = "AxVLCPlugin2" & Me.PlayerNumber Then
                 PlayerControl = Player
                 Exit For
@@ -22,11 +22,10 @@
 
         Me.l_filename.Text = System.IO.Path.GetFileName(Form_Main.options_list(Me.PlayerNumber).lb_playlist.Text)
         Me.tb_changeto.Text = Me.l_filename.Text
-        'TODO this doesn't work 
-        'Dim x As Integer = Me.PlayerControl.Location.X * 1.2
-        'Dim y As Integer = Me.PlayerControl.Location.Y * 1.2
-        'Me.Location = New Point(x, y)
-        Me.Location = Me.PlayerControl.Location
+        Dim VW_Loc As Point = Me.PlayerControl.Parent.Parent.Location
+        Dim Player_Loc As Point = Me.PlayerControl.Location
+        Dim Mod_Loc As Point = New Point((Me.PlayerControl.Width / 2) - (Me.Width / 2), (Me.PlayerControl.Height / 2) - (Me.Height / 2))
+        Me.Location = VW_Loc + Player_Loc + Mod_Loc
     End Sub
 
     '>> Clicks

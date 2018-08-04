@@ -17,7 +17,7 @@ Public Class Form_Main
 
     Private Class EventRecord
         Public EventName As String
-        Public From As AxVLCPlugin2
+        Public From As AxAXVLC.AxVLCPlugin2
         Public Time As Integer
     End Class
 
@@ -28,7 +28,7 @@ Public Class Form_Main
             TagB = 2
         End Enum
 
-        Public Video As AxVLCPlugin2
+        Public Video As AxAXVLC.AxVLCPlugin2
         Private eState As States = States.Disabled
         Public PositionA As Double
         Public PositionB As Double
@@ -46,17 +46,17 @@ Public Class Form_Main
     End Class
 
     Private Class PlayItem
-        Public Player As AxVLCPlugin2
+        Public Player As AxAXVLC.AxVLCPlugin2
         Public PlayIndex As Integer
     End Class
 
     Private Class LoadList
-        Private oPlayer As AxVLCPlugin2
-        Public Property Player As AxVLCPlugin2
+        Private oPlayer As AxAXVLC.AxVLCPlugin2
+        Public Property Player As AxAXVLC.AxVLCPlugin2
             Get
                 Return Me.oPlayer
             End Get
-            Set(value As AxVLCPlugin2)
+            Set(value As AxAXVLC.AxVLCPlugin2)
                 Me.oPlayer = value
                 Me.PlayerIndex = oPlayer.Name.Last.ToString
                 Me.PlayerOptions = Form_Main.options_list(PlayerIndex)
@@ -87,9 +87,12 @@ Public Class Form_Main
 
         Public Sub LoadFileList()
             Me.PlayerOptions.b_clear_playlist_Click(Nothing, Nothing)
+            Dim Files() As String = Nothing
             'If My.Settings.Item("Save" & SaveIndex & "Player" & PlayerIndex) Is Nothing Then Exit Sub
-            Dim Files(DirectCast(My.Settings.Item("Save" & SaveIndex & "Player" & PlayerIndex), System.Collections.Specialized.StringCollection).Count) As String
-            DirectCast(My.Settings.Item("Save" & SaveIndex & "Player" & PlayerIndex), System.Collections.Specialized.StringCollection).CopyTo(Files, 0)
+            If (Not IsNothing(My.Settings.Item("Save" & SaveIndex & "Player" & PlayerIndex))) Then
+                ReDim Files(DirectCast(My.Settings.Item("Save" & SaveIndex & "Player" & PlayerIndex), System.Collections.Specialized.StringCollection).Count)
+                DirectCast(My.Settings.Item("Save" & SaveIndex & "Player" & PlayerIndex), System.Collections.Specialized.StringCollection).CopyTo(Files, 0)
+            End If
             If Files Is Nothing Then Exit Sub
             For Each File In Files
                 If File Is Nothing Then Continue For
@@ -143,8 +146,8 @@ Public Class Form_Main
 
     Private LastEvent As EventRecord
     Private WasMaximized As Boolean
-    Private PlayControl As AxVLCPlugin2
-    Private ControlsEffect As AxVLCPlugin2
+    Private PlayControl As AxAXVLC.AxVLCPlugin2
+    Private ControlsEffect As AxAXVLC.AxVLCPlugin2
     Friend Shared LastSaveLoad As Integer = 1
     Private ToolDisplay As Long
     Private DoingDropDown As Boolean = False
@@ -169,9 +172,9 @@ Public Class Form_Main
         Me.Big.Add(Nothing)
         Me.Bigger.Add(Nothing)
         Me.Aspect.Add(Nothing)
-        Dim Player As AxVLCPlugin2
+        Dim Player As AxAXVLC.AxVLCPlugin2
 
-        For Each Player In TableLayoutPanel1.Controls.OfType(Of AxVLCPlugin2)()
+        For Each Player In TableLayoutPanel1.Controls.OfType(Of AxAXVLC.AxVLCPlugin2)()
             Player.audio.toggleMute()
             Player.AutoPlay = True
             Me.Big.Add(False)
@@ -224,10 +227,10 @@ Public Class Form_Main
         'Try to kill players
         Me.SuspendLayout()
 
-        Dim Vid As AxVLCPlugin2
+        Dim Vid As AxAXVLC.AxVLCPlugin2
         Dim Threads As New List(Of Thread)
         Me.Cursor = Cursors.WaitCursor
-        For Each Vid In Me.Controls.OfType(Of AxVLCPlugin2)()
+        For Each Vid In Me.Controls.OfType(Of AxAXVLC.AxVLCPlugin2)()
             Dim KillThread As New Thread(AddressOf KillPlayer)
             Threads.Add(KillThread)
             KillThread.Name = "Kill " & Vid.Name
@@ -249,12 +252,12 @@ Public Class Form_Main
 
         Console.WriteLine("Form Closing: " & Threads.Count & " still alive")
 
-        For Each Zombie In Me.TableLayoutPanel1.Controls.OfType(Of AxVLCPlugin2)()
+        For Each Zombie In Me.TableLayoutPanel1.Controls.OfType(Of AxAXVLC.AxVLCPlugin2)()
             Zombie.BeginInvoke(Sub(x) x.close())
         Next
     End Sub
 
-    Private Sub KillPlayer(Player As AxVLCPlugin2)
+    Private Sub KillPlayer(Player As AxAXVLC.AxVLCPlugin2)
         Try
             SyncLock (Player)
                 Player.playlist.stop()
@@ -273,9 +276,9 @@ Public Class Form_Main
     Private Sub VLC_play(sender As System.Object, e As System.EventArgs) Handles AxVLCPlugin21.play, AxVLCPlugin22.play, AxVLCPlugin23.play, AxVLCPlugin24.play, AxVLCPlugin25.play, AxVLCPlugin26.play
         Dim Debug = False
 
-        If Debug Then Console.WriteLine("INFO: Play Event on " & DirectCast(sender, AxVLCPlugin2).Name & ". State : " & DirectCast(sender, AxVLCPlugin2).input.state)
+        If Debug Then Console.WriteLine("INFO: Play Event on " & DirectCast(sender, AxAXVLC.AxVLCPlugin2).Name & ". State : " & DirectCast(sender, AxAXVLC.AxVLCPlugin2).input.state)
 
-        Dim Player As AxVLCPlugin2 = sender
+        Dim Player As AxAXVLC.AxVLCPlugin2 = sender
         Dim DoAspectChange As Boolean
 
         If Not Me.LastEvent.From Is Player Then
@@ -305,7 +308,7 @@ Public Class Form_Main
     Private Sub FormatControls()
         Dim loc = Me.ControlsEffect.Location
         Me.tp_controls.Width = Me.ControlsEffect.Width
-        If TypeOf Me.ControlsEffect Is AxVLCPlugin2 Then
+        If TypeOf Me.ControlsEffect Is AxAXVLC.AxVLCPlugin2 Then
             loc.Y = Me.ControlsEffect.Location.Y + (Me.ControlsEffect.Height - 71)
             'Console.WriteLine("DEBUG: Ax Control X: " & ControlUnder.Location.X & " Y: " & ControlUnder.Location.Y)
         End If
@@ -471,9 +474,11 @@ Public Class Form_Main
     End Sub
 
     Private Sub l_playing_Click(sender As Object, e As EventArgs) Handles l_playing.Click
+        Dim lb As Label = DirectCast(sender, Label)
         If Me.ControlsEffect Is Nothing Then Exit Sub
         RenameForm.PlayerNumber = Int(Me.ControlsEffect.Name.Last.ToString)
-        RenameForm.ShowDialog()
+        RenameForm.ShowDialog(sender)
+        'RenameForm.Location = New Point(lb.Location.X + lb.Parent.Parent.Location.X, lb.Location.Y)
     End Sub
 
     Private Sub l_playing_DoubleClick(sender As Object, e As EventArgs) Handles l_playing.DoubleClick
@@ -535,17 +540,17 @@ Public Class Form_Main
     End Sub
 
     Private Sub b_pause_play_Click(sender As Object, e As EventArgs) Handles b_pause_play.Click
-        Dim Player As AxVLCPlugin2
+        Dim Player As AxAXVLC.AxVLCPlugin2
         If Me.b_pause_play.Tag = "Pause" Then
             Me.b_pause_play.Tag = "Play"
-            For Each Player In Me.TableLayoutPanel1.Controls.OfType(Of AxVLCPlugin2)()
+            For Each Player In Me.TableLayoutPanel1.Controls.OfType(Of AxAXVLC.AxVLCPlugin2)()
                 If Player.playlist.isPlaying AndAlso Not Player.input.state = PlayerState.Paused Then
                     Player.playlist.togglePause()
                 End If
             Next
         Else
             Me.b_pause_play.Tag = "Pause"
-            For Each Player In Me.TableLayoutPanel1.Controls.OfType(Of AxVLCPlugin2)()
+            For Each Player In Me.TableLayoutPanel1.Controls.OfType(Of AxAXVLC.AxVLCPlugin2)()
                 If Player.input.state = PlayerState.Paused Then
                     Player.playlist.togglePause()
                 Else
@@ -570,13 +575,13 @@ Public Class Form_Main
         Me.tp_controls.Visible = False
         If Me.Big(BigChangeIndex) Then
             'Make Small
-            Dim ControlToShow As AxVLCPlugin2 = Nothing
+            Dim ControlToShow As AxAXVLC.AxVLCPlugin2 = Nothing
             Me.TableLayoutPanel1.SetColumnSpan(Me.ControlsEffect, 1)
             Select Case BigChangeIndex
                 Case 3, 6
                     Me.TableLayoutPanel1.SetColumn(Me.ControlsEffect, 2)
             End Select
-            ControlToShow = DirectCast(Me.gb_hidden.Controls.Find("AxVLCPlugin2" & BigChangeIndex + Modifier, False)(0), AxVLCPlugin2)
+            ControlToShow = DirectCast(Me.gb_hidden.Controls.Find("AxVLCPlugin2" & BigChangeIndex + Modifier, False)(0), AxAXVLC.AxVLCPlugin2)
             Dim ColumnForControl As Integer = ControlToShow.Name.Last.ToString
             ColumnForControl = IIf(ColumnForControl < 3, ColumnForControl - 1, ColumnForControl - 4)
             ControlToShow.Parent = Me.TableLayoutPanel1
@@ -590,8 +595,8 @@ Public Class Form_Main
             Me.b_big.Text = "Big"
         Else
             'Make Big
-            Dim ControlToHide As AxVLCPlugin2 = Nothing
-            ControlToHide = DirectCast(Me.TableLayoutPanel1.Controls.Find("AxVLCPlugin2" & BigChangeIndex + Modifier, False)(0), AxVLCPlugin2)
+            Dim ControlToHide As AxAXVLC.AxVLCPlugin2 = Nothing
+            ControlToHide = DirectCast(Me.TableLayoutPanel1.Controls.Find("AxVLCPlugin2" & BigChangeIndex + Modifier, False)(0), AxAXVLC.AxVLCPlugin2)
             If ControlToHide.input.state = PlayerState.Playing Then ControlToHide.playlist.togglePause()
             ControlToHide.Parent = Me.gb_hidden
             Application.DoEvents()
@@ -633,7 +638,7 @@ Public Class Form_Main
                 Location = 2
         End Select
         Items.Remove(BigChangeIndex)
-        Dim ControlsHide As List(Of AxVLCPlugin2) = GetPlayersToHide_Bigger(Items)
+        Dim ControlsHide As List(Of AxAXVLC.AxVLCPlugin2) = GetPlayersToHide_Bigger(Items)
 
         Me.tp_controls.Visible = False
         If Me.Bigger(BigChangeIndex) Then
@@ -676,8 +681,8 @@ Public Class Form_Main
     End Sub
 
     'Helper function for Bigger
-    Private Function GetPlayersToHide_Bigger(Keys As List(Of Integer)) As List(Of AxVLCPlugin2)
-        Dim Result As New List(Of AxVLCPlugin2)
+    Private Function GetPlayersToHide_Bigger(Keys As List(Of Integer)) As List(Of AxAXVLC.AxVLCPlugin2)
+        Dim Result As New List(Of AxAXVLC.AxVLCPlugin2)
         For Each Key As Integer In Keys
             Result.Add(Me.Controls.Find("AxVLCPlugin2" & Key, True)(0))
         Next
@@ -723,7 +728,7 @@ Public Class Form_Main
         Next
 #End If
 
-        Dim Players = Me.TableLayoutPanel1.Controls.OfType(Of AxVLCPlugin2)()
+        Dim Players = Me.TableLayoutPanel1.Controls.OfType(Of AxAXVLC.AxVLCPlugin2)()
         Dim Index As Integer
 
         For Each Player In Players
@@ -804,14 +809,14 @@ Public Class Form_Main
 
     ' >> Sub Routinues
 
-    Friend Sub PlayIfNot(Player As AxVLCPlugin2)
+    Friend Sub PlayIfNot(Player As AxAXVLC.AxVLCPlugin2)
         'Console.WriteLine("PlayIfNot")
         If Player.input.state <> PlayerState.Playing AndAlso Player.playlist.items.count > 0 Then
             Player.playlist.play()
         End If
     End Sub
 
-    Public Sub WaitForStateChange(Player As AxVLCPlugin2, Optional StateToWaitFor As PlayerState = PlayerState.Playing)
+    Public Sub WaitForStateChange(Player As AxAXVLC.AxVLCPlugin2, Optional StateToWaitFor As PlayerState = PlayerState.Playing)
         Dim CurrentState As Integer = Player.input.state
         Dim Sanity As Integer = 0
         Do While Sanity < 200
@@ -871,10 +876,10 @@ Public Class Form_Main
 
     '  >>  ASPECT
 
-    Friend Sub ChangeAspect(Optional Player As AxVLCPlugin2 = Nothing)
+    Friend Sub ChangeAspect(Optional Player As AxAXVLC.AxVLCPlugin2 = Nothing)
 
         If Player Is Nothing Then
-            For Each Player In Me.TableLayoutPanel1.Controls.OfType(Of AxVLCPlugin2)()
+            For Each Player In Me.TableLayoutPanel1.Controls.OfType(Of AxAXVLC.AxVLCPlugin2)()
                 Me.ChangeAspect(Player)
             Next
             Exit Sub
@@ -962,7 +967,7 @@ Public Class Form_Main
 
     End Sub
 
-    Friend Sub RemoveAspect(Player As AxVLCPlugin2)
+    Friend Sub RemoveAspect(Player As AxAXVLC.AxVLCPlugin2)
         Player.video.crop = Player.video.width & ":" & Player.video.height
         Player.video.aspectRatio = Player.video.width & ":" & Player.video.height
     End Sub

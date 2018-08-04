@@ -277,7 +277,7 @@
     Friend Sub b_savefiles_Click(sender As Object, e As EventArgs) Handles b_save_files.Click
         Dim SearchFilePath As String
         Dim Prefrix As String = "Save" & n_save.Value
-        Dim Player As AxVLCPlugin2
+        Dim Player As AxAXVLC.AxVLCPlugin2
 
         For Index = 1 To 6
             Player = Form_Main.Controls.Find("AxVLCPlugin2" & Index, True)(0)
@@ -297,7 +297,7 @@
 
     Private Sub b_savefolders_Click(sender As Object, e As EventArgs) Handles b_savefolders.Click
         Dim Prefrix As String = "Save" & n_save.Value
-        Dim Player As AxVLCPlugin2
+        Dim Player As AxAXVLC.AxVLCPlugin2
         Dim SearchFilePath As String
 
         For Index = 1 To 6
@@ -479,8 +479,8 @@
 
     '  >> Subroutines
 
-    Friend Sub TogglePauseAllVideos(Optional Exception As AxVLCPlugin2 = Nothing)
-        Dim Vid As AxVLCPlugin2
+    Friend Sub TogglePauseAllVideos(Optional Exception As AxAXVLC.AxVLCPlugin2 = Nothing)
+        Dim Vid As AxAXVLC.AxVLCPlugin2
         For a = 1 To 6
             Vid = DirectCast(Form_Main.Controls.Find("AxVLCPlugin2" & a, True)(0), AxAXVLC.AxVLCPlugin2)
             If Not Exception Is Nothing Then
