@@ -182,29 +182,34 @@
     Friend Sub b_split_list_Click(sender As System.Object, e As System.EventArgs) Handles b_split_list.Click
         If lb_playlist.Items.Count < cb_split.SelectedItem Then Exit Sub
         Dim splitinto As Integer = cb_split.SelectedItem + 1
-        Dim paths(lb_playlist.Items.Count - 1) As String
-        lb_playlist.Items.CopyTo(paths, 0)
-        Dim DishedOut As Integer
-        Dim start As Integer = 0
-        Dim finish As Integer = Math.Floor(paths.Length / splitinto)
-        Dim playlistno As Integer = 1
-        For player = Me.Video To (Me.Video + splitinto) - 1
-            Form_Main.options_list.Item(player).b_clear_playlist_Click(Nothing, Nothing)
-            For a As Integer = start To finish * playlistno
-                If a > paths.Length - 1 Then Exit For
-                Form_Main.options_list.Item(player).AddFile(paths(a))
-                DishedOut = DishedOut + 1
-            Next a
-            start = (finish * playlistno) + 1
-            playlistno = playlistno + 1
-            If player = (Me.Video + splitinto) - 1 Then
-                For a = DishedOut To paths.Length - 1
-                    Form_Main.options_list.Item(player).AddFile(paths(a))
-                Next
+        Dim temp(lb_playlist.Items.Count - 1) As String
+        lb_playlist.Items.CopyTo(temp, 0)
+        Dim PathList As New List(Of String)
+        PathList.AddRange(temp)
+
+        Dim start As Integer = Me.Video
+        Dim finish As Integer = splitinto
+        Form_Main.options_list.Item(Me.Video).b_clear_playlist_Click(Nothing, Nothing)
+
+        Dim current As Integer = start
+        Do While PathList.Count > 0
+            Form_Main.options_list.Item(current).AddFile(PathList(0))
+            PathList.RemoveAt(0)
+            current = current + 1
+            If current > finish Then
+                current = start
             End If
-            Form_Main.options_list.Item(player).PopulatePlayList(Nothing, Not sender Is Nothing)
-            Application.DoEvents()
-        Next player
+        Loop
+        For a = start To finish
+            Form_Main.options_list.Item(a).PopulatePlayList(Nothing, Nothing)
+            If Form_Main.options_list.Item(a).lb_playlist.Items.Count = 0 Then
+                Exit For
+            End If
+            Form_Main.options_list.Item(a).lb_playlist.SelectedIndex = 0
+        Next
+        Application.DoEvents()
+
+
     End Sub
 
     Private Sub r_moveall_Click(sender As Object, e As EventArgs) Handles r_moveall.Click
@@ -217,8 +222,12 @@
             Next
             Form_Main.options_list(a).b_clear_playlist_Click(Nothing, Nothing)
         Next
-        'Hack for some reason the listbox doesn't update
-        Me.Close()
+        If Me.Video = 1 Then
+            Form_Main.options_list(1).PopulatePlayList()
+            If Form_Main.options_list(1).lb_playlist.Items.Count > 1 Then
+                Form_Main.options_list(1).lb_playlist.SelectedIndex = 0
+            End If
+        End If
     End Sub
 
     Friend Sub b_remove_Click(sender As Object, e As EventArgs) Handles b_remove.Click
@@ -438,6 +447,26 @@
         Process.Start("explorer.exe", "/select," & File)
     End Sub
 
+    Private Sub RemoveMenuItem_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click, ToolStripMenuItem2.Click, ToolStripMenuItem3.Click, ToolStripMenuItem4.Click, ToolStripMenuItem5.Click
+        'not completley working
+        Dim Remove As String = DirectCast(sender, ToolStripMenuItem).Text
+        Dim split() As String = Nothing
+        Dim a As Integer = 0
+        Do While a < Me.lb_playlist.Items.Count - 1
+            split = Me.lb_playlist.Items.Item(a).ToString.Split("\")
+            If split.Last.StartsWith(Remove) Then
+                Me.Playlist.Remove(Me.lb_playlist.Items.Item(a).ToString)
+                Me.VideoToEffect.playlist.items.remove(a)
+                Me.lb_playlist.Items.RemoveAt(a)
+            Else
+                a = a + 1
+            End If
+        Loop
+        If Me.lb_playlist.SelectedIndex = -1 And Me.lb_playlist.Items.Count > 0 Then
+            Me.lb_playlist.SelectedIndex = 0
+        End If
+    End Sub
+
     'close
 
     Friend Sub b_close_Click(sender As System.Object, e As System.EventArgs) Handles b_close.Click
@@ -458,7 +487,7 @@
     '  >> Drags
 
     Friend Sub lb_playlist_DragEnter(sender As System.Object, e As System.Windows.Forms.DragEventArgs) Handles lb_playlist.DragEnter
-        If (e.Data.GetDataPresent(DataFormats.FileDrop)) Then
+        If (e.Data.GetDataPresent(DataFormats.FileDrop) Or e.Data.GetDataPresent(DataFormats.Text)) Then
             e.Effect = DragDropEffects.All
         Else
             e.Effect = DragDropEffects.None
@@ -466,7 +495,14 @@
     End Sub
 
     Friend Sub lb_playlist_DragDrop(sender As Object, e As System.Windows.Forms.DragEventArgs) Handles lb_playlist.DragDrop
-        Dim s() As String = e.Data.GetData(DataFormats.FileDrop, False)
+        Dim formats() As String = e.Data.GetFormats()
+        Dim s() As String = Nothing
+        If (formats.Contains("FileDrop")) Then
+            s = e.Data.GetData(DataFormats.FileDrop, False)
+        ElseIf (formats.Contains("Text")) Then
+            ReDim s(0)
+            s(0) = e.Data.GetData(DataFormats.StringFormat, True)
+        End If
         For Each fh In s
             If System.IO.Directory.Exists(fh) Then
                 AddFolder(fh)
@@ -625,10 +661,6 @@
     Private Sub RandListTSMI_Click(sender As Object, e As EventArgs) Handles RandListTSMI.Click
         Me.b_random.Tag = "Rand"
         Me.b_random_Click(Nothing, Nothing)
-    End Sub
-
-    Private Sub b_rename_Click(sender As Object, e As EventArgs)
-
     End Sub
 
 End Class

@@ -225,6 +225,7 @@ Partial Class Form_Main
         '
         'l_playing
         '
+        Me.l_playing.AllowDrop = True
         Me.l_playing.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.l_playing.BackColor = System.Drawing.SystemColors.Control
         Me.tp_controls.SetColumnSpan(Me.l_playing, 7)
@@ -403,7 +404,7 @@ Partial Class Form_Main
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(800, 599)
         Me.Name = "Form_Main"
-        Me.Text = "Video Wall v1.2"
+        Me.Text = "Video Wall v1.2.3"
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.AxVLCPlugin21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AxVLCPlugin22, System.ComponentModel.ISupportInitialize).EndInit()

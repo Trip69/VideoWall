@@ -36,6 +36,11 @@ Partial Class FormOptions
         Me.RenameFileTSTB = New System.Windows.Forms.ToolStripTextBox()
         Me.MoveFileTSMI = New System.Windows.Forms.ToolStripMenuItem()
         Me.RandListTSMI = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RemoveTSMI = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.b_fullscreen = New System.Windows.Forms.Button()
         Me.b_video_fullscreen = New System.Windows.Forms.Button()
         Me.b_clear_playlist = New System.Windows.Forms.Button()
@@ -60,6 +65,7 @@ Partial Class FormOptions
         Me.l_playlist_count = New System.Windows.Forms.Label()
         Me.b_remover = New System.Windows.Forms.Button()
         Me.r_moveall = New System.Windows.Forms.Button()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.cms_listbox.SuspendLayout()
         Me.gb_split.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -68,20 +74,18 @@ Partial Class FormOptions
         '
         'b_select_file
         '
-        Me.b_select_file.Location = New System.Drawing.Point(16, 15)
-        Me.b_select_file.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_select_file.Location = New System.Drawing.Point(12, 12)
         Me.b_select_file.Name = "b_select_file"
-        Me.b_select_file.Size = New System.Drawing.Size(125, 28)
+        Me.b_select_file.Size = New System.Drawing.Size(94, 23)
         Me.b_select_file.TabIndex = 0
         Me.b_select_file.Text = "Select File"
         Me.b_select_file.UseVisualStyleBackColor = True
         '
         'b_select_directory
         '
-        Me.b_select_directory.Location = New System.Drawing.Point(16, 48)
-        Me.b_select_directory.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_select_directory.Location = New System.Drawing.Point(12, 39)
         Me.b_select_directory.Name = "b_select_directory"
-        Me.b_select_directory.Size = New System.Drawing.Size(125, 28)
+        Me.b_select_directory.Size = New System.Drawing.Size(94, 23)
         Me.b_select_directory.TabIndex = 1
         Me.b_select_directory.Text = "Select Directory"
         Me.b_select_directory.UseVisualStyleBackColor = True
@@ -89,10 +93,9 @@ Partial Class FormOptions
         'b_close
         '
         Me.b_close.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.b_close.Location = New System.Drawing.Point(655, 554)
-        Me.b_close.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_close.Location = New System.Drawing.Point(491, 450)
         Me.b_close.Name = "b_close"
-        Me.b_close.Size = New System.Drawing.Size(116, 32)
+        Me.b_close.Size = New System.Drawing.Size(87, 26)
         Me.b_close.TabIndex = 2
         Me.b_close.Text = "Close"
         Me.b_close.UseVisualStyleBackColor = True
@@ -109,22 +112,19 @@ Partial Class FormOptions
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lb_playlist.ContextMenuStrip = Me.cms_listbox
         Me.lb_playlist.FormattingEnabled = True
-        Me.lb_playlist.ItemHeight = 16
-        Me.lb_playlist.Location = New System.Drawing.Point(152, 4)
-        Me.lb_playlist.Margin = New System.Windows.Forms.Padding(4)
+        Me.lb_playlist.Location = New System.Drawing.Point(114, 3)
         Me.lb_playlist.Name = "lb_playlist"
-        Me.lb_playlist.Size = New System.Drawing.Size(617, 516)
+        Me.lb_playlist.Size = New System.Drawing.Size(464, 420)
         Me.lb_playlist.TabIndex = 3
         '
         'cms_listbox
         '
-        Me.cms_listbox.AutoSize = False
         Me.cms_listbox.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.cms_listbox.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RenameTSMI, Me.RenameFileTSTB, Me.MoveFileTSMI, Me.RandListTSMI})
+        Me.cms_listbox.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RenameTSMI, Me.RenameFileTSTB, Me.MoveFileTSMI, Me.RandListTSMI, Me.RemoveTSMI})
         Me.cms_listbox.Name = "cms_listbox"
         Me.cms_listbox.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
         Me.cms_listbox.ShowImageMargin = False
-        Me.cms_listbox.Size = New System.Drawing.Size(116, 92)
+        Me.cms_listbox.Size = New System.Drawing.Size(156, 135)
         '
         'RenameTSMI
         '
@@ -132,7 +132,7 @@ Partial Class FormOptions
         Me.RenameTSMI.Name = "RenameTSMI"
         Me.RenameTSMI.Padding = New System.Windows.Forms.Padding(0)
         Me.RenameTSMI.ShowShortcutKeys = False
-        Me.RenameTSMI.Size = New System.Drawing.Size(153, 22)
+        Me.RenameTSMI.Size = New System.Drawing.Size(155, 20)
         Me.RenameTSMI.Text = "Rename"
         '
         'RenameFileTSTB
@@ -148,21 +148,51 @@ Partial Class FormOptions
         Me.MoveFileTSMI.Name = "MoveFileTSMI"
         Me.MoveFileTSMI.Padding = New System.Windows.Forms.Padding(0)
         Me.MoveFileTSMI.ShowShortcutKeys = False
-        Me.MoveFileTSMI.Size = New System.Drawing.Size(153, 22)
+        Me.MoveFileTSMI.Size = New System.Drawing.Size(155, 20)
         Me.MoveFileTSMI.Text = "Move File"
         '
         'RandListTSMI
         '
         Me.RandListTSMI.Name = "RandListTSMI"
-        Me.RandListTSMI.Size = New System.Drawing.Size(153, 24)
+        Me.RandListTSMI.Size = New System.Drawing.Size(155, 22)
         Me.RandListTSMI.Text = "Randomise List"
+        '
+        'RemoveTSMI
+        '
+        Me.RemoveTSMI.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ToolStripMenuItem5, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4})
+        Me.RemoveTSMI.Name = "RemoveTSMI"
+        Me.RemoveTSMI.Size = New System.Drawing.Size(155, 22)
+        Me.RemoveTSMI.Text = "Remove"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem1.Text = "vvgood"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem2.Text = "vgood"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem3.Text = "ok"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem4.Text = "poor"
         '
         'b_fullscreen
         '
-        Me.b_fullscreen.Location = New System.Drawing.Point(16, 84)
-        Me.b_fullscreen.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_fullscreen.Location = New System.Drawing.Point(12, 68)
         Me.b_fullscreen.Name = "b_fullscreen"
-        Me.b_fullscreen.Size = New System.Drawing.Size(125, 28)
+        Me.b_fullscreen.Size = New System.Drawing.Size(94, 23)
         Me.b_fullscreen.TabIndex = 4
         Me.b_fullscreen.Text = "App Full Screen"
         Me.ToolTip1.SetToolTip(Me.b_fullscreen, "Make Application Fullscreen")
@@ -170,20 +200,18 @@ Partial Class FormOptions
         '
         'b_video_fullscreen
         '
-        Me.b_video_fullscreen.Location = New System.Drawing.Point(16, 119)
-        Me.b_video_fullscreen.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_video_fullscreen.Location = New System.Drawing.Point(12, 97)
         Me.b_video_fullscreen.Name = "b_video_fullscreen"
-        Me.b_video_fullscreen.Size = New System.Drawing.Size(125, 28)
+        Me.b_video_fullscreen.Size = New System.Drawing.Size(94, 23)
         Me.b_video_fullscreen.TabIndex = 5
         Me.b_video_fullscreen.Text = "Video Fullscreen"
         Me.b_video_fullscreen.UseVisualStyleBackColor = True
         '
         'b_clear_playlist
         '
-        Me.b_clear_playlist.Location = New System.Drawing.Point(16, 277)
-        Me.b_clear_playlist.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_clear_playlist.Location = New System.Drawing.Point(12, 225)
         Me.b_clear_playlist.Name = "b_clear_playlist"
-        Me.b_clear_playlist.Size = New System.Drawing.Size(125, 28)
+        Me.b_clear_playlist.Size = New System.Drawing.Size(94, 23)
         Me.b_clear_playlist.TabIndex = 8
         Me.b_clear_playlist.Text = "Clear Playlist"
         Me.b_clear_playlist.UseVisualStyleBackColor = True
@@ -195,21 +223,18 @@ Partial Class FormOptions
         Me.gb_split.Controls.Add(Me.l_split)
         Me.gb_split.Controls.Add(Me.cb_split)
         Me.gb_split.Controls.Add(Me.b_split_list)
-        Me.gb_split.Location = New System.Drawing.Point(5, 544)
-        Me.gb_split.Margin = New System.Windows.Forms.Padding(4)
+        Me.gb_split.Location = New System.Drawing.Point(4, 442)
         Me.gb_split.Name = "gb_split"
-        Me.gb_split.Padding = New System.Windows.Forms.Padding(4)
-        Me.gb_split.Size = New System.Drawing.Size(343, 50)
+        Me.gb_split.Size = New System.Drawing.Size(257, 41)
         Me.gb_split.TabIndex = 10
         Me.gb_split.TabStop = False
         '
         'l_split
         '
         Me.l_split.AutoSize = True
-        Me.l_split.Location = New System.Drawing.Point(211, 18)
-        Me.l_split.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.l_split.Location = New System.Drawing.Point(158, 15)
         Me.l_split.Name = "l_split"
-        Me.l_split.Size = New System.Drawing.Size(129, 17)
+        Me.l_split.Size = New System.Drawing.Size(94, 13)
         Me.l_split.TabIndex = 12
         Me.l_split.Text = "additional player(s)"
         '
@@ -217,19 +242,17 @@ Partial Class FormOptions
         '
         Me.cb_split.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_split.FormattingEnabled = True
-        Me.cb_split.Location = New System.Drawing.Point(141, 15)
-        Me.cb_split.Margin = New System.Windows.Forms.Padding(4)
+        Me.cb_split.Location = New System.Drawing.Point(106, 12)
         Me.cb_split.Name = "cb_split"
         Me.cb_split.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cb_split.Size = New System.Drawing.Size(60, 24)
+        Me.cb_split.Size = New System.Drawing.Size(46, 21)
         Me.cb_split.TabIndex = 11
         '
         'b_split_list
         '
-        Me.b_split_list.Location = New System.Drawing.Point(8, 12)
-        Me.b_split_list.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_split_list.Location = New System.Drawing.Point(6, 10)
         Me.b_split_list.Name = "b_split_list"
-        Me.b_split_list.Size = New System.Drawing.Size(125, 28)
+        Me.b_split_list.Size = New System.Drawing.Size(94, 23)
         Me.b_split_list.TabIndex = 10
         Me.b_split_list.Text = "Split List Into"
         Me.ToolTip1.SetToolTip(Me.b_split_list, "Splits the list on this player overwritting the playlists on the floo")
@@ -237,10 +260,9 @@ Partial Class FormOptions
         '
         'b_random
         '
-        Me.b_random.Location = New System.Drawing.Point(16, 226)
-        Me.b_random.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_random.Location = New System.Drawing.Point(12, 184)
         Me.b_random.Name = "b_random"
-        Me.b_random.Size = New System.Drawing.Size(125, 43)
+        Me.b_random.Size = New System.Drawing.Size(94, 35)
         Me.b_random.TabIndex = 11
         Me.b_random.Tag = "Rand"
         Me.b_random.Text = "&Randomize Playlist"
@@ -248,10 +270,9 @@ Partial Class FormOptions
         '
         'b_remove
         '
-        Me.b_remove.Location = New System.Drawing.Point(16, 155)
-        Me.b_remove.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_remove.Location = New System.Drawing.Point(12, 126)
         Me.b_remove.Name = "b_remove"
-        Me.b_remove.Size = New System.Drawing.Size(125, 28)
+        Me.b_remove.Size = New System.Drawing.Size(94, 23)
         Me.b_remove.TabIndex = 12
         Me.b_remove.Text = "Remove Item"
         Me.ToolTip1.SetToolTip(Me.b_remove, "Remove selected from playlist")
@@ -261,10 +282,10 @@ Partial Class FormOptions
         '
         Me.b_next_opt.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.b_next_opt.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.b_next_opt.Location = New System.Drawing.Point(716, 529)
+        Me.b_next_opt.Location = New System.Drawing.Point(537, 430)
         Me.b_next_opt.Margin = New System.Windows.Forms.Padding(0)
         Me.b_next_opt.Name = "b_next_opt"
-        Me.b_next_opt.Size = New System.Drawing.Size(53, 23)
+        Me.b_next_opt.Size = New System.Drawing.Size(40, 19)
         Me.b_next_opt.TabIndex = 15
         Me.b_next_opt.Text = ">>"
         Me.ToolTip1.SetToolTip(Me.b_next_opt, "Options for next player")
@@ -274,10 +295,10 @@ Partial Class FormOptions
         '
         Me.b_prev_opt.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.b_prev_opt.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.b_prev_opt.Location = New System.Drawing.Point(655, 529)
+        Me.b_prev_opt.Location = New System.Drawing.Point(491, 430)
         Me.b_prev_opt.Margin = New System.Windows.Forms.Padding(0)
         Me.b_prev_opt.Name = "b_prev_opt"
-        Me.b_prev_opt.Size = New System.Drawing.Size(53, 23)
+        Me.b_prev_opt.Size = New System.Drawing.Size(40, 19)
         Me.b_prev_opt.TabIndex = 16
         Me.b_prev_opt.Text = "<<"
         Me.ToolTip1.SetToolTip(Me.b_prev_opt, "Options for previous player")
@@ -290,21 +311,20 @@ Partial Class FormOptions
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.n_save)
         Me.GroupBox1.Controls.Add(Me.b_save_files)
-        Me.GroupBox1.Location = New System.Drawing.Point(5, 382)
+        Me.GroupBox1.Location = New System.Drawing.Point(4, 310)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(1)
-        Me.GroupBox1.Size = New System.Drawing.Size(142, 158)
+        Me.GroupBox1.Size = New System.Drawing.Size(106, 128)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Playlists (All)"
         '
         'b_savefolders
         '
-        Me.b_savefolders.Location = New System.Drawing.Point(8, 123)
-        Me.b_savefolders.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_savefolders.Location = New System.Drawing.Point(6, 100)
         Me.b_savefolders.Name = "b_savefolders"
-        Me.b_savefolders.Size = New System.Drawing.Size(125, 28)
+        Me.b_savefolders.Size = New System.Drawing.Size(94, 23)
         Me.b_savefolders.TabIndex = 24
         Me.b_savefolders.Text = "Save Folders"
         Me.ToolTip1.SetToolTip(Me.b_savefolders, "Save the directories the files are in, to be searched on load.")
@@ -312,10 +332,9 @@ Partial Class FormOptions
         '
         'b_load_pl
         '
-        Me.b_load_pl.Location = New System.Drawing.Point(5, 52)
-        Me.b_load_pl.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_load_pl.Location = New System.Drawing.Point(4, 42)
         Me.b_load_pl.Name = "b_load_pl"
-        Me.b_load_pl.Size = New System.Drawing.Size(125, 28)
+        Me.b_load_pl.Size = New System.Drawing.Size(94, 23)
         Me.b_load_pl.TabIndex = 23
         Me.b_load_pl.Text = "Load Playlists"
         Me.ToolTip1.SetToolTip(Me.b_load_pl, "Loads all players playlist numbered #")
@@ -324,30 +343,27 @@ Partial Class FormOptions
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 25)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(8, 20)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 17)
+        Me.Label1.Size = New System.Drawing.Size(42, 13)
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Save #"
         '
         'n_save
         '
-        Me.n_save.Location = New System.Drawing.Point(84, 22)
-        Me.n_save.Margin = New System.Windows.Forms.Padding(4)
+        Me.n_save.Location = New System.Drawing.Point(63, 18)
         Me.n_save.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.n_save.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.n_save.Name = "n_save"
-        Me.n_save.Size = New System.Drawing.Size(47, 22)
+        Me.n_save.Size = New System.Drawing.Size(35, 20)
         Me.n_save.TabIndex = 21
         Me.n_save.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'b_save_files
         '
-        Me.b_save_files.Location = New System.Drawing.Point(8, 87)
-        Me.b_save_files.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_save_files.Location = New System.Drawing.Point(6, 71)
         Me.b_save_files.Name = "b_save_files"
-        Me.b_save_files.Size = New System.Drawing.Size(125, 28)
+        Me.b_save_files.Size = New System.Drawing.Size(94, 23)
         Me.b_save_files.TabIndex = 19
         Me.b_save_files.Text = "Save Files"
         Me.ToolTip1.SetToolTip(Me.b_save_files, "Save playlistd as a file list")
@@ -355,10 +371,9 @@ Partial Class FormOptions
         '
         'b_delete
         '
-        Me.b_delete.Location = New System.Drawing.Point(16, 191)
-        Me.b_delete.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_delete.Location = New System.Drawing.Point(12, 155)
         Me.b_delete.Name = "b_delete"
-        Me.b_delete.Size = New System.Drawing.Size(125, 28)
+        Me.b_delete.Size = New System.Drawing.Size(94, 23)
         Me.b_delete.TabIndex = 21
         Me.b_delete.Text = "Delete Video"
         Me.ToolTip1.SetToolTip(Me.b_delete, "Delete Item from Playlist and computer")
@@ -367,10 +382,9 @@ Partial Class FormOptions
         'b_skip_time
         '
         Me.b_skip_time.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.b_skip_time.Location = New System.Drawing.Point(547, 554)
-        Me.b_skip_time.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_skip_time.Location = New System.Drawing.Point(410, 450)
         Me.b_skip_time.Name = "b_skip_time"
-        Me.b_skip_time.Size = New System.Drawing.Size(100, 32)
+        Me.b_skip_time.Size = New System.Drawing.Size(75, 26)
         Me.b_skip_time.TabIndex = 22
         Me.b_skip_time.Text = "Skip Time"
         Me.b_skip_time.UseVisualStyleBackColor = True
@@ -378,10 +392,9 @@ Partial Class FormOptions
         'b_refreshdirs
         '
         Me.b_refreshdirs.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.b_refreshdirs.Location = New System.Drawing.Point(378, 557)
-        Me.b_refreshdirs.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_refreshdirs.Location = New System.Drawing.Point(284, 453)
         Me.b_refreshdirs.Name = "b_refreshdirs"
-        Me.b_refreshdirs.Size = New System.Drawing.Size(161, 28)
+        Me.b_refreshdirs.Size = New System.Drawing.Size(121, 23)
         Me.b_refreshdirs.TabIndex = 23
         Me.b_refreshdirs.Text = "Refresh Directories"
         Me.b_refreshdirs.UseVisualStyleBackColor = True
@@ -389,38 +402,41 @@ Partial Class FormOptions
         'l_playlist_count
         '
         Me.l_playlist_count.AutoSize = True
-        Me.l_playlist_count.Location = New System.Drawing.Point(375, 524)
-        Me.l_playlist_count.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.l_playlist_count.Location = New System.Drawing.Point(281, 426)
         Me.l_playlist_count.Name = "l_playlist_count"
-        Me.l_playlist_count.Size = New System.Drawing.Size(109, 17)
+        Me.l_playlist_count.Size = New System.Drawing.Size(82, 13)
         Me.l_playlist_count.TabIndex = 24
         Me.l_playlist_count.Text = "Playlist Items : 0"
         '
         'b_remover
         '
-        Me.b_remover.Location = New System.Drawing.Point(13, 313)
-        Me.b_remover.Margin = New System.Windows.Forms.Padding(4)
+        Me.b_remover.Location = New System.Drawing.Point(10, 254)
         Me.b_remover.Name = "b_remover"
-        Me.b_remover.Size = New System.Drawing.Size(125, 28)
+        Me.b_remover.Size = New System.Drawing.Size(94, 23)
         Me.b_remover.TabIndex = 25
         Me.b_remover.Text = "Remove Rated"
         Me.b_remover.UseVisualStyleBackColor = True
         '
         'r_moveall
         '
-        Me.r_moveall.Location = New System.Drawing.Point(16, 349)
-        Me.r_moveall.Margin = New System.Windows.Forms.Padding(4)
+        Me.r_moveall.Location = New System.Drawing.Point(12, 284)
         Me.r_moveall.Name = "r_moveall"
-        Me.r_moveall.Size = New System.Drawing.Size(125, 28)
+        Me.r_moveall.Size = New System.Drawing.Size(94, 23)
         Me.r_moveall.TabIndex = 26
         Me.r_moveall.Text = "Move all to PL 1"
         Me.r_moveall.UseVisualStyleBackColor = True
         '
+        'ToolStripMenuItem5
+        '
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem5.Text = "good"
+        '
         'FormOptions
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 598)
+        Me.ClientSize = New System.Drawing.Size(588, 486)
         Me.Controls.Add(Me.r_moveall)
         Me.Controls.Add(Me.b_remover)
         Me.Controls.Add(Me.l_playlist_count)
@@ -441,9 +457,8 @@ Partial Class FormOptions
         Me.Controls.Add(Me.b_select_directory)
         Me.Controls.Add(Me.b_select_file)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(799, 485)
+        Me.MinimumSize = New System.Drawing.Size(603, 401)
         Me.Name = "FormOptions"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Nothing"
@@ -493,4 +508,10 @@ Partial Class FormOptions
     Friend WithEvents RandListTSMI As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents b_remover As System.Windows.Forms.Button
     Friend WithEvents r_moveall As System.Windows.Forms.Button
+    Friend WithEvents RemoveTSMI As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
 End Class

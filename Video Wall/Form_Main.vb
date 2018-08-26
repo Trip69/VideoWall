@@ -152,6 +152,7 @@ Public Class Form_Main
     Private ToolDisplay As Long
     Private DoingDropDown As Boolean = False
     Friend Shared ContextPausedPlayer As Integer
+    Private DragFrom As Integer = -1
 
     Private MousePos As System.Drawing.Point
     Private DropMenuCheck As Boolean
@@ -473,7 +474,19 @@ Public Class Form_Main
 
     End Sub
 
+    Private Sub l_playing_MouseDown(sender As Object, e As MouseEventArgs) Handles l_playing.MouseDown
+        If (Me.ControlsEffect.playlist.itemCount = 0) Then
+            Exit Sub
+        End If
+        Dim index As Integer = (Int(Me.ControlsEffect.Name.Last.ToString))
+        If (e.Button = MouseButtons.Right) Then
+            Me.DragFrom = index
+            Me.l_playing.DoDragDrop(Me.options_list(index).lb_playlist.SelectedItem.ToString, DragDropEffects.All)
+        End If
+    End Sub
+
     Private Sub l_playing_Click(sender As Object, e As EventArgs) Handles l_playing.Click
+        Me.DragFrom = -1
         Dim lb As Label = DirectCast(sender, Label)
         If Me.ControlsEffect Is Nothing Then Exit Sub
         RenameForm.PlayerNumber = Int(Me.ControlsEffect.Name.Last.ToString)
@@ -776,6 +789,27 @@ Public Class Form_Main
 
     End Sub
 
+    Friend Sub l_playing_DragEnter(sender As Object, e As DragEventArgs) Handles l_playing.DragEnter
+        Dim Index As Integer = Me.ControlsEffect.Name.Last.ToString
+        If Me.DragFrom = Index Then
+            Exit Sub
+        End If
+        Me.options_list(Index).lb_playlist_DragEnter(sender, e)
+    End Sub
+
+    Friend Sub l_playing_DragDrop(sender As Object, e As DragEventArgs) Handles l_playing.DragDrop
+        Dim Index As Integer = Me.ControlsEffect.Name.Last.ToString
+        If Me.DragFrom = Index Then
+            Exit Sub
+        End If
+        Me.options_list(Index).lb_playlist_DragDrop(sender, e)
+        Me.ControlsEffect.playlist.playItem(Me.ControlsEffect.playlist.itemCount - 1)
+        If (Me.DragFrom > -1) Then
+            Me.options_list(Me.DragFrom).b_remove_Click(Nothing, Nothing)
+            Me.DragFrom = -1
+        End If
+    End Sub
+
     '  >>  RESIZES
 
     Private Sub Form_Main_ResizeBegin(sender As System.Object, e As System.EventArgs) Handles MyBase.ResizeBegin
@@ -976,6 +1010,5 @@ Public Class Form_Main
 
     Private Sub b_test_code_Click(sender As Object, e As EventArgs)
     End Sub
-
 
 End Class

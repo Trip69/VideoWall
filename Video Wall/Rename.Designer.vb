@@ -35,7 +35,7 @@ Partial Class RenameForm
         '
         Me.b_rename.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.b_rename.Location = New System.Drawing.Point(212, 251)
-        Me.b_rename.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.b_rename.Margin = New System.Windows.Forms.Padding(2)
         Me.b_rename.Name = "b_rename"
         Me.b_rename.Size = New System.Drawing.Size(87, 26)
         Me.b_rename.TabIndex = 5
@@ -50,9 +50,9 @@ Partial Class RenameForm
         Me.clb_cats.CheckOnClick = True
         Me.clb_cats.ColumnWidth = 70
         Me.clb_cats.FormattingEnabled = True
-        Me.clb_cats.Items.AddRange(New Object() {"toedit", "odd", "comp", "pov", "funny", "sm", "-", "amt", "asian", "indian", "teen", "hot", "star", "milf", "-", "blonde", "brun", "redhead", "small tits", "big tits", "-", "solo", "couple", "3 some", "group", "gang", "party", "-", "anal", "les", "dp", "rim", "v and a", "cp", "bj", "-", "girl porn", "ladyboy", "dog", "horse", "animal", "-", "hd", "low res"})
+        Me.clb_cats.Items.AddRange(New Object() {"toedit", "odd", "comp", "pov", "funny", "sm", "-", "amt", "asian", "indian", "teen", "hot", "star", "milf", "-", "blonde", "brun", "redhead", "small tits", "big tits", "big dick", "wet", "-", "solo", "couple", "3 some", "group", "gang", "party", "-", "anal", "les", "dp", "rim", "v and a", "cp", "bj", "-", "girl porn", "ladyboy", "dog", "horse", "animal", "-", "hd", "low res"})
         Me.clb_cats.Location = New System.Drawing.Point(9, 34)
-        Me.clb_cats.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.clb_cats.Margin = New System.Windows.Forms.Padding(2)
         Me.clb_cats.MultiColumn = True
         Me.clb_cats.Name = "clb_cats"
         Me.clb_cats.Size = New System.Drawing.Size(290, 184)
@@ -64,7 +64,7 @@ Partial Class RenameForm
         Me.cb_rating.FormattingEnabled = True
         Me.cb_rating.Items.AddRange(New Object() {"vvgood", "vgood", "good", "ok", "poor"})
         Me.cb_rating.Location = New System.Drawing.Point(9, 10)
-        Me.cb_rating.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cb_rating.Margin = New System.Windows.Forms.Padding(2)
         Me.cb_rating.Name = "cb_rating"
         Me.cb_rating.Size = New System.Drawing.Size(83, 21)
         Me.cb_rating.TabIndex = 3
@@ -73,7 +73,7 @@ Partial Class RenameForm
         '
         Me.b_cancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.b_cancel.Location = New System.Drawing.Point(9, 251)
-        Me.b_cancel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.b_cancel.Margin = New System.Windows.Forms.Padding(2)
         Me.b_cancel.Name = "b_cancel"
         Me.b_cancel.Size = New System.Drawing.Size(87, 26)
         Me.b_cancel.TabIndex = 6
@@ -95,7 +95,7 @@ Partial Class RenameForm
         Me.tb_changeto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tb_changeto.Location = New System.Drawing.Point(9, 222)
-        Me.tb_changeto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tb_changeto.Margin = New System.Windows.Forms.Padding(2)
         Me.tb_changeto.Name = "tb_changeto"
         Me.tb_changeto.Size = New System.Drawing.Size(290, 20)
         Me.tb_changeto.TabIndex = 8
@@ -104,7 +104,7 @@ Partial Class RenameForm
         '
         Me.b_delete.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.b_delete.Location = New System.Drawing.Point(100, 251)
-        Me.b_delete.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.b_delete.Margin = New System.Windows.Forms.Padding(2)
         Me.b_delete.Name = "b_delete"
         Me.b_delete.Size = New System.Drawing.Size(87, 26)
         Me.b_delete.TabIndex = 9
@@ -123,7 +123,7 @@ Partial Class RenameForm
         Me.Controls.Add(Me.b_rename)
         Me.Controls.Add(Me.clb_cats)
         Me.Controls.Add(Me.cb_rating)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "RenameForm"
         Me.Text = "Rename"
         Me.ResumeLayout(False)
